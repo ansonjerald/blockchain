@@ -5,13 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockchain Voting System</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Vote for Your Favorite Candidate</h1>
-    <div id="vote-container">
-        <button onclick="vote('Candidate A')">Vote Candidate A</button>
-        <button onclick="vote('Candidate B')">Vote Candidate B</button>
+    <div class="container">
+        <h1>Blockchain Voting System</h1>
+
+        <div id="setup-section">
+            <h2>Setup Candidates</h2>
+            <input type="text" id="candidate-name" placeholder="Enter candidate name">
+            <button onclick="addCandidate()">Add Candidate</button>
+            <ul id="candidate-list"></ul>
+            <button onclick="startVoting()">Start Voting</button>
+        </div>
+
+        <div id="voter-section" style="display: none;">
+            <input type="text" id="voter-name" placeholder="Enter your name">
+            <button onclick="registerVoter()">Start Voting</button>
+        </div>
+
+        <div id="vote-section" style="display: none;">
+            <h2>Welcome, <span id="voter-display"></span></h2>
+            <p>Choose your candidate:</p>
+            <div id="candidate-buttons"></div>
+        </div>
+
+        <h2>Blockchain Ledger</h2>
+        <ul id="ledger"></ul>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
+
